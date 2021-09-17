@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:vehicles_app/models/token.dart';
 import 'package:vehicles_app/screens/document_types_screen.dart';
 import 'package:vehicles_app/screens/login_screen.dart';
-/* import 'package:vehicles_app/screens/procedures_screen.dart';
-import 'package:vehicles_app/screens/users_screen.dart';
+import 'package:vehicles_app/screens/procedures_screen.dart';
+/*import 'package:vehicles_app/screens/users_screen.dart';
 import 'package:vehicles_app/screens/vehicle_types_screen.dart';
 import 'brands_screen.dart'; */
 
@@ -70,6 +70,18 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Image(
               image: AssetImage('assets/vehicles_logo.png'),
             )
+          ),
+           ListTile(
+            leading: Icon(Icons.precision_manufacturing),
+            title: const Text('Procedimientos'),
+            onTap: () { 
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => ProceduresScreen(token: widget.token,)
+                )
+              );
+            },
           ),
          /*  ListTile(
             leading: Icon(Icons.two_wheeler),
